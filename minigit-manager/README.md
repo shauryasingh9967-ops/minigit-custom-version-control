@@ -1,4 +1,4 @@
-# Mini Git Manager
+# Mini Git Manager-https://minigit-custom-version-control-6cyy.vercel.app/
 
 A full-stack educational project that simulates the core Git workflow — repositories, files, staging, commits and version history — without using any real Git library. Built as a college internship project.
 
