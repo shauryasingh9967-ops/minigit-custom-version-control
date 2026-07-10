@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+html.dark {
+  --color-base: #12141c;
+  --color-base-soft: #171a25;
+  --color-surface: #1b1e2b;
+  --color-surface-hover: #222635;
+  --color-surface-raised: #232738;
+  --color-border: #2a2e3f;
+  --color-border-soft: #22263a;
+  --color-ink: #e7e9f0;
+  --color-ink-muted: #8b90a8;
+  --color-ink-faint: #5b6079;
+}
+
+html:not(.dark) {
+  --color-base: #f3f2ee;
+  --color-base-soft: #ebe9e2;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f2f1ec;
+  --color-surface-raised: #ffffff;
+  --color-border: #ded9cc;
+  --color-border-soft: #e7e3d7;
+  --color-ink: #23241f;
+  --color-ink-muted: #6b6a5f;
+  --color-ink-faint: #9b9a8c;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a2e3f transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #2a2e3f;
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+::selection {
+  background: rgba(232, 163, 61, 0.3);
+}
+
+/* Signature element: the commit-graph rail used across Commits / History pages */
+.commit-rail {
+  position: relative;
+}
+.commit-rail::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, #e8a33d 0%, #2a2e3f 12%, #2a2e3f 88%, transparent 100%);
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #e8a33d;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
